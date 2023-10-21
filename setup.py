@@ -14,6 +14,7 @@ setup(
     author_email="yashbaravaliya206@gmail.com",
     description=DESCRIPTION,
     long_description_content_type="text/markdown",
+    url="https://github.com/YashBaravaliya/automll_package"
     # long_description=LONG_DESCRIPTION,
     packages=find_packages(),
     INSTALL_REQUIRES = [
