@@ -19,32 +19,32 @@ st.set_option('deprecation.showPyplotGlobalUse', False)
 def main():
 
 
-selected = option_menu(
-    menu_title = "AutoMll: Instant Machine Learning",
-    options = ['Upload_Data','Feature_Enginerring','Regression','Classification','Clustering'],
-    orientation="horizontal",
-    icons=['cloud-upload-fill','clipboard-data-fill','bar-chart-line-fill','collection-fill','vr'],
-    menu_icon='pie-chart-fill',
+    selected = option_menu(
+        menu_title = "AutoMll: Instant Machine Learning",
+        options = ['Upload_Data','Feature_Enginerring','Regression','Classification','Clustering'],
+        orientation="horizontal",
+        icons=['cloud-upload-fill','clipboard-data-fill','bar-chart-line-fill','collection-fill','vr'],
+        menu_icon='pie-chart-fill',
 
-)
+    )
 
-# Function to perform some exploratory data analysis
+    # Function to perform some exploratory data analysis
 
 
-if selected == 'Upload_Data':
-    upload()
+    if selected == 'Upload_Data':
+        upload()
 
-elif selected == 'Feature_Enginerring':
-    fe()
+    elif selected == 'Feature_Enginerring':
+        fe()
 
-elif selected == 'Regression':
-    regression()
+    elif selected == 'Regression':
+        regression()
 
-elif selected == 'Classification':
-    classification()
+    elif selected == 'Classification':
+        classification()
 
-elif selected == 'Clustering':
-    clustering()
+    elif selected == 'Clustering':
+        clustering()
 
 if __name__ == "__main__": 
     main()

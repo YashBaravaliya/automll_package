@@ -19,7 +19,10 @@ setup(
     INSTALL_REQUIRES = [
     "streamlit",
     "scikit-learn",
-    # Add other dependencies as needed
+    "streamlit_extras",
+    "pandas",
+    "numpy",
+    "streamlit_option_menu"
     ],
     keywords=['auto ml','no code ml','model'],
     LICENSE = "MIT",

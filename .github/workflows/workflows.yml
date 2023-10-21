@@ -1,0 +1,57 @@
+name: Python Package
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+  release:
+    types:
+      - created
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Run tests
+      run: pytest
+
+  deploy:
+    needs: test
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Check out code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+
+    - name: Publish to PyPI
+      run: |
+        echo ${{ secrets.PYPI_API_TOKEN }} > pypi_token.txt
+        pip install twine
+        python setup.py sdist bdist_wheel
+        twine upload --skip-existing --username yashbaravaliaya206 --password pypi-AgEIcHlwaS5vcmcCJDNjZTYzMjAzLWIxYjYtNDMyMS05ODk1LThjZDQyM2RjMTAyNgACKlszLCJmYzNjZWNmMi0yZjJkLTRiM2EtYTdhZC1mYmYyNmE4YmRmNDAiXQAABiBtzF2ByGKkSglkTiIby7-6RHU2axIhGaYgbvQY1Sg5SQ dist/*
+      env:
+        TWINE_USERNAME: __token__
+

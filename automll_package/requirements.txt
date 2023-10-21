@@ -3,6 +3,5 @@ pandas
 numpy
 ipywidgets
 scikit-learn
-pandas_profiling
-streamlit_pandas_profiling
 streamlit_extras
+streamlit_option_menu
