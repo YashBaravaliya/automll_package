@@ -1,2 +1,0 @@
-[console_scripts]
-auto-ml-app = automll_package.main:main
